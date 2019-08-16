@@ -23,13 +23,58 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="110" id="9U6-1n-2Cc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="110" id="9U6-1n-2Cc" customClass="GearViewCell" customModule="RxSpecial" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9U6-1n-2Cc" id="ldT-8s-I1o">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9tI-43-NiA">
+                                                    <rect key="frame" x="4" y="15" width="80" height="79.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="rnm-zh-xcW"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1kd-ma-656">
+                                                    <rect key="frame" x="92" y="15" width="38" height="81"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jT-qI-n9b">
+                                                            <rect key="frame" x="0.0" y="0.0" width="38" height="23.5"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWQ-Un-05r">
+                                                            <rect key="frame" x="0.0" y="28.5" width="38" height="24"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4DI-2D-J6F">
+                                                            <rect key="frame" x="0.0" y="57.5" width="38" height="23.5"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1kd-ma-656" firstAttribute="leading" secondItem="9tI-43-NiA" secondAttribute="trailing" constant="8" symbolic="YES" id="C9E-sg-TDA"/>
+                                                <constraint firstItem="9tI-43-NiA" firstAttribute="centerY" secondItem="ldT-8s-I1o" secondAttribute="centerY" id="IZl-Og-xIl"/>
+                                                <constraint firstItem="9tI-43-NiA" firstAttribute="top" secondItem="ldT-8s-I1o" secondAttribute="top" constant="15" id="SBI-vR-Nlf"/>
+                                                <constraint firstItem="9tI-43-NiA" firstAttribute="leading" secondItem="ldT-8s-I1o" secondAttribute="leading" constant="4" id="TjQ-cZ-Uqd"/>
+                                                <constraint firstItem="9tI-43-NiA" firstAttribute="top" secondItem="1kd-ma-656" secondAttribute="bottom" constant="-81" id="XHp-Ce-7TS"/>
+                                                <constraint firstItem="1kd-ma-656" firstAttribute="top" secondItem="ldT-8s-I1o" secondAttribute="top" constant="15" id="u4R-Jj-9qt"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="gearImageView" destination="9tI-43-NiA" id="nJI-ET-yqd"/>
+                                            <outlet property="idLabel" destination="tWQ-Un-05r" id="sAv-dk-CPD"/>
+                                            <outlet property="nameLabel" destination="8jT-qI-n9b" id="j1l-sY-u3q"/>
+                                            <outlet property="orderLabel" destination="4DI-2D-J6F" id="Qd8-tz-3Ia"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
