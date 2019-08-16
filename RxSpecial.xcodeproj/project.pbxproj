@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD2752D62306529B00A4A083 /* Gear.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2752D52306529B00A4A083 /* Gear.swift */; };
 		AD642DC023064B620042A61B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD642DBF23064B620042A61B /* AppDelegate.swift */; };
 		AD642DC523064B620042A61B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD642DC323064B620042A61B /* Main.storyboard */; };
 		AD642DC723064B650042A61B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD642DC623064B650042A61B /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD2752D52306529B00A4A083 /* Gear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gear.swift; sourceTree = "<group>"; };
 		AD642DBC23064B620042A61B /* RxSpecial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSpecial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD642DBF23064B620042A61B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD642DC423064B620042A61B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		AD642DE623064C150042A61B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AD2752D52306529B00A4A083 /* Gear.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD642DE523064BFC0042A61B /* GearController.swift in Sources */,
+				AD2752D62306529B00A4A083 /* Gear.swift in Sources */,
 				AD642DC023064B620042A61B /* AppDelegate.swift in Sources */,
 				AD642DE323064BE80042A61B /* GearDetailsController.swift in Sources */,
 				AD642DE923064C410042A61B /* GearViewCell.swift in Sources */,
