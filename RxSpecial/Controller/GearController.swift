@@ -26,10 +26,8 @@ class GearController: UIViewController {
     private func populateGear() {
         URLRequest.load(resource: GearList.all)
             .subscribe(onNext: { [weak self] result in
-                
                 if let result = result {
-                    self?.gears = [result.gears]
-                    
+                    self?.gears = [result.gear]
                     DispatchQueue.main.async {
                         self?.gearTableView.reloadData()
                     }

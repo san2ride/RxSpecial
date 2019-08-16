@@ -9,7 +9,7 @@
 import Foundation
 
 struct GearList : Decodable {
-    var gears: Gear
+    var gear: Gear
 }
 
 struct Gear : Decodable {
