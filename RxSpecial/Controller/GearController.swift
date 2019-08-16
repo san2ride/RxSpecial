@@ -20,8 +20,22 @@ class GearController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-
+        populateGear()
+    }
+    
+    private func populateGear() {
+        URLRequest.load(resource: GearList.all)
+            .subscribe(onNext: { [weak self] result in
+                
+                if let result = result {
+                    self?.gears = [result.gears]
+                    
+                    DispatchQueue.main.async {
+                        self?.gearTableView.reloadData()
+                    }
+                }
+                
+            }).disposed(by: bag)
     }
 }
 
@@ -39,20 +53,5 @@ extension GearController: UITableViewDelegate, UITableViewDataSource {
         cell.nameLabel.text = self.gears[indexPath.row].name
         
         return cell
-    }
-    
-    private func populateGear() {
-        URLRequest.load(resource: Gear.all)
-            .subscribe(onNext: { [weak self] result in
-                
-                if let result = result {
-                    self?.gears = result.gears
-                    
-                    DispatchQueue.main.async {
-                        self?.gearTableView.reloadData()
-                    }
-                }
-                
-            }).disposed(by: bag)
     }
 }

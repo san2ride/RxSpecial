@@ -8,6 +8,10 @@
 
 import Foundation
 
+struct GearList : Decodable {
+    var gears: Gear
+}
+
 struct Gear : Decodable {
     var id: Int
     var imageUrl: URL
@@ -42,9 +46,9 @@ struct Swagger : Decodable {
     var securityDefinition: [String:SecurityDefinition]
 }
 
-extension Gear {
-    static var all: Resource<Gear> = {
-        let url = URL(string: "")!
+extension GearList {
+    static var all: Resource<GearList> = {
+        let url = URL(string: "https://interview.retul.com/api/gear/?format=json")!
         return Resource(url: url)
     }()
 }
