@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Gear : Codable {
+struct Gear : Decodable {
     var id: Int
     var imageUrl: URL
     var name: String
@@ -22,16 +22,16 @@ struct Gear : Codable {
     }
 }
 
-struct Info : Codable {
+struct Info : Decodable {
     var title: String
     var version: String
 }
 
-struct SecurityDefinition: Codable {
+struct SecurityDefinition: Decodable {
     var type: String
 }
 
-struct Swagger : Codable {
+struct Swagger : Decodable {
     var swagger: String
     var info: Info
     var host: String
@@ -40,4 +40,11 @@ struct Swagger : Codable {
     var consumes: [String]
     var produces: [String]
     var securityDefinition: [String:SecurityDefinition]
+}
+
+extension Gear {
+    static var all: Resource<Gear> = {
+        let url = URL(string: "")!
+        return Resource(url: url)
+    }()
 }
