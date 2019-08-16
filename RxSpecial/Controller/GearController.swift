@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import Foundation
+import RxSwift
+import RxCocoa
 
 class GearController: UIViewController {
     
-    
     @IBOutlet weak var gearTableView: UITableView!
+    let bag = DisposeBag()
+    private var gears = [Gear]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +27,32 @@ class GearController: UIViewController {
 
 extension GearController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.gears.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath) as! GearViewCell
+        guard
+            let cell = tableView.dequeueReusableCell(withIdentifier: "GearCell", for: indexPath) as? GearViewCell else {
+            fatalError("GearViewCell is broken...")
+        }
+        
+        cell.nameLabel.text = self.gears[indexPath.row].name
         
         return cell
+    }
+    
+    private func populateGear() {
+        URLRequest.load(resource: Gear.all)
+            .subscribe(onNext: { [weak self] result in
+                
+                if let result = result {
+                    self?.gears = result.gears
+                    
+                    DispatchQueue.main.async {
+                        self?.gearTableView.reloadData()
+                    }
+                }
+                
+            }).disposed(by: bag)
     }
 }
